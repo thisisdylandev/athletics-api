@@ -2,8 +2,6 @@ pre-push:
   parallel: true
   commands:
     lint:
-      run: rake lint:fix
+      run: rake lint
     test:
       run: rake test
-    brakeman:
-      run: rake brakeman
