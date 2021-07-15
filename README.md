@@ -61,3 +61,6 @@ To run tests, run the following command
 Rails, RSpec, Postgres
 
   
+## Credits
+
+README created using [readme.so](https://readme.so)
