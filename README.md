@@ -52,9 +52,20 @@ Start the server
 To run tests, run the following command
 
 ```bash
-  bundle exec rspec
+  bundle exec rake test
 ```
 
+To run a vulnerability scan, run the following command
+
+```bash
+  bundle exec rake brakeman
+```
+
+To run tests, vulnerability scans, and linter, run the following command
+
+```bash
+  bundle exec rake check
+```
   
 ## Tech Stack
 

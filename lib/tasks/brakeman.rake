@@ -3,5 +3,5 @@ task :brakeman do
   require "brakeman"
 
   Brakeman.run(app_path: ".",
-               print_report: true)
+    print_report: true)
 end
