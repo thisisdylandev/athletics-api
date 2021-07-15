@@ -20,24 +20,24 @@ equipment_list.each do |name|
 end
 
 sport_list = [
-  'Womens Beginner Soccer',
-  'Womens Intermediate Soccer',
-  'Womens Advanced Soccer',
-  'Mens Beginner Soccer',
-  'Mens Intermediate Soccer',
-  'Mens Advanced Soccer',
-  'Womens Beginner Volleyball',
-  'Womens Intermediate Volleyball',
-  'Womens Advanced Volleyball',
-  'Mens Beginner Football',
-  'Mens Intermediate Football',
-  'Mens Advanced Football',
-  'Womens Beginner Rugby',
-  'Womens Intermediate Rugby',
-  'Womens Advanced Rugby',
-  'Mens Beginner Rugby',
-  'Mens Intermediate Rugby',
-  'Mens Advanced Rugby',
+  "Womens Beginner Soccer",
+  "Womens Intermediate Soccer",
+  "Womens Advanced Soccer",
+  "Mens Beginner Soccer",
+  "Mens Intermediate Soccer",
+  "Mens Advanced Soccer",
+  "Womens Beginner Volleyball",
+  "Womens Intermediate Volleyball",
+  "Womens Advanced Volleyball",
+  "Mens Beginner Football",
+  "Mens Intermediate Football",
+  "Mens Advanced Football",
+  "Womens Beginner Rugby",
+  "Womens Intermediate Rugby",
+  "Womens Advanced Rugby",
+  "Mens Beginner Rugby",
+  "Mens Intermediate Rugby",
+  "Mens Advanced Rugby"
 ]
 
 sport_list.each do |name|

@@ -18,7 +18,6 @@ RSpec.describe SportsController, type: :routing do
       expect(get: "/sports/1/edit").to route_to("sports#edit", id: "1")
     end
 
-
     it "routes to #create" do
       expect(post: "/sports").to route_to("sports#create")
     end
