@@ -5,3 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+equipment_list = [
+  "band",
+  "barbell",
+  "bench",
+  "box",
+  "cable machine",
+  "dumbbell",
+  "glute-ham",
+  "incline bench",
+  "lat pulldown",
+  "medicine ball",
+  "pullup bar",
+  "squat rack",
+  "kettlebell",
+  "stability ball"
+]
+
+equipment_list.each do |name|
+  Equipment.create(name: name)
+end
