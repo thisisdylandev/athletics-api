@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 equipment_list = [
   "band",
   "barbell",
@@ -25,4 +17,29 @@ equipment_list = [
 
 equipment_list.each do |name|
   Equipment.create(name: name)
+end
+
+sport_list = [
+  'Womens Beginner Soccer',
+  'Womens Intermediate Soccer',
+  'Womens Advanced Soccer',
+  'Mens Beginner Soccer',
+  'Mens Intermediate Soccer',
+  'Mens Advanced Soccer',
+  'Womens Beginner Volleyball',
+  'Womens Intermediate Volleyball',
+  'Womens Advanced Volleyball',
+  'Mens Beginner Football',
+  'Mens Intermediate Football',
+  'Mens Advanced Football',
+  'Womens Beginner Rugby',
+  'Womens Intermediate Rugby',
+  'Womens Advanced Rugby',
+  'Mens Beginner Rugby',
+  'Mens Intermediate Rugby',
+  'Mens Advanced Rugby',
+]
+
+sport_list.each do |name|
+  Sport.create(name: name)
 end
