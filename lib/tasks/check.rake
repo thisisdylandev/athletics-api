@@ -4,12 +4,7 @@ desc "Run linter and tests"
 task :check do
   Rake::Task["standard"].execute
   Rake::Task["spec"].execute
-end
-
-desc "Run linter and tests for CI"
-task :"check:ci" do
-  Rake::Task["standard"].execute
-  Rake::Task["spec"].execute
+  Rake::Task["brakeman"].execute
 end
 
 desc "Run linter"
