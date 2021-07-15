@@ -19,7 +19,18 @@ equipment_list.each do |name|
   Equipment.create(name: name)
 end
 
-sport_list = [
+sports_list = [
+  "soccer",
+  "volleyball",
+  "football",
+  "rugby",
+]
+
+sports_list.each do |name|
+  Sport.create(name: name)
+end
+
+workout_name_list = [
   "Womens Beginner Soccer",
   "Womens Intermediate Soccer",
   "Womens Advanced Soccer",
@@ -39,7 +50,3 @@ sport_list = [
   "Mens Intermediate Rugby",
   "Mens Advanced Rugby"
 ]
-
-sport_list.each do |name|
-  Sport.create(name: name)
-end
