@@ -1,0 +1,9 @@
+pre-push:
+  parallel: true
+  commands:
+    lint:
+      run: rake lint:fix
+    test:
+      run: rake test
+    brakeman:
+      run: rake brakeman
