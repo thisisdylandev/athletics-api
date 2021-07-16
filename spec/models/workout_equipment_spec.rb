@@ -1,5 +1,6 @@
-require "rails_helper"
+# require "rails_helper"
 
-RSpec.describe WorkoutEquipment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+# RSpec.describe WorkoutEquipment, type: :model do
+#   it "is not valid without a workout"
+#   it "is not valid without a equipment"
+# end
