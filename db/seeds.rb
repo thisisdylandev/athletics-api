@@ -15,38 +15,191 @@ equipment_list = [
   "stability ball"
 ]
 
-equipment_list.each do |name|
-  Equipment.create(name: name)
-end
-
 sports_list = [
   "soccer",
   "volleyball",
   "football",
-  "rugby",
+  "rugby"
 ]
+
+workouts_list = [
+  {
+    name: "Womens Beginner Soccer",
+    sport: "soccer",
+    equipment: [
+      "band",
+      "box"
+    ]
+  },
+  {
+    name: "Womens Intermediate Soccer",
+    sport: "soccer",
+    equipment: [
+      "band",
+      "box",
+      "squat rack"
+    ]
+  },
+  {
+    name: "Womens Advanced Soccer",
+    sport: "soccer",
+    equipment: [
+      "band",
+      "box",
+      "squat rack",
+      "medicine ball"
+    ]
+  },
+  {
+    name: "Mens Beginner Soccer",
+    sport: "soccer",
+    equipment: [
+      "barbell",
+      "dumbbell"
+    ]
+  },
+  {
+    name: "Mens Intermediate Soccer",
+    sport: "soccer",
+    equipment: [
+      "barbell",
+      "dumbbell",
+      "squat rack"
+    ]
+  },
+  {
+    name: "Mens Advanced Soccer",
+    sport: "soccer",
+    equipment: [
+      "barbell",
+      "dumbbell",
+      "squat rack",
+      "incline bench"
+    ]
+  },
+  {
+    name: "Womens Beginner Volleyball",
+    sport: "volleyball",
+    equipment: [
+      "medicine ball",
+      "kettlebell"
+    ]
+  },
+  {
+    name: "Womens Intermediate Volleyball",
+    sport: "volleyball",
+    equipment: [
+      "medicine ball",
+      "kettlebell",
+      "stability ball"
+    ]
+  },
+  {
+    name: "Womens Advanced Volleyball",
+    sport: "volleyball",
+    equipment: [
+      "medicine ball",
+      "kettlebell",
+      "stability ball",
+      "glute-ham"
+    ]
+  },
+  {
+    name: "Mens Beginner Football",
+    sport: "football",
+    equipment: [
+      "barbell",
+      "bench"
+    ]
+  },
+  {
+    name: "Mens Intermediate Football",
+    sport: "football",
+    equipment: [
+      "barbell",
+      "bench",
+      "cable machine"
+    ]
+  },
+  {
+    name: "Mens Advanced Football",
+    sport: "football",
+    equipment: [
+      "barbell",
+      "bench",
+      "cable machine",
+      "lat pulldown"
+    ]
+  },
+  {
+    name: "Womens Beginner Rugby",
+    sport: "rugby",
+    equipment: [
+      "band",
+      "dumbbell"
+    ]
+  },
+  {
+    name: "Womens Intermediate Rugby",
+    sport: "rugby",
+    equipment: [
+      "band",
+      "dumbbell",
+      "stability ball"
+    ]
+  },
+  {
+    name: "Womens Advanced Rugby",
+    sport: "rugby",
+    equipment: [
+      "band",
+      "dumbbell",
+      "stability ball",
+      "lat pulldown"
+    ]
+  },
+  {
+    name: "Men Beginner Rugby",
+    sport: "rugby",
+    equipment: [
+      "squat rack",
+      "pullup bar"
+    ]
+  },
+  {
+    name: "Men Intermediate Rugby",
+    sport: "rugby",
+    equipment: [
+      "squat rack",
+      "pullup bar",
+      "glute-ham"
+    ]
+  },
+  {
+    name: "Men Advanced Rugby",
+    sport: "rugby",
+    equipment: [
+      "squat rack",
+      "pullup bar",
+      "glute-ham",
+      "cable machine"
+    ]
+  }
+]
+
+equipment_list.each do |name|
+  Equipment.create(name: name)
+end
 
 sports_list.each do |name|
   Sport.create(name: name)
 end
 
-workout_name_list = [
-  "Womens Beginner Soccer",
-  "Womens Intermediate Soccer",
-  "Womens Advanced Soccer",
-  "Mens Beginner Soccer",
-  "Mens Intermediate Soccer",
-  "Mens Advanced Soccer",
-  "Womens Beginner Volleyball",
-  "Womens Intermediate Volleyball",
-  "Womens Advanced Volleyball",
-  "Mens Beginner Football",
-  "Mens Intermediate Football",
-  "Mens Advanced Football",
-  "Womens Beginner Rugby",
-  "Womens Intermediate Rugby",
-  "Womens Advanced Rugby",
-  "Mens Beginner Rugby",
-  "Mens Intermediate Rugby",
-  "Mens Advanced Rugby"
-]
+workouts_list.each do |workout|
+  workout_sport = Sport.find_by(name: workout[:sport])
+  new_workout = Workout.create(name: workout[:name], sport: workout_sport)
+  workout[:equipment].each do |equipment|
+    equip = Equipment.find_by(name: equipment)
+    WorkoutEquipment.create(workout: new_workout, equipment: equip)
+  end
+end

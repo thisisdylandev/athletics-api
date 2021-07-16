@@ -1,4 +1,4 @@
 class Workout < ApplicationRecord
-  has_one :sport
+  belongs_to :sport
   has_many :workout_equipments
 end

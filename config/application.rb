@@ -34,5 +34,6 @@ module AthleticsApi
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.logger = Logger.new($stdout)
   end
 end
