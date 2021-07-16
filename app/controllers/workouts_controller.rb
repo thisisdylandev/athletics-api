@@ -3,7 +3,7 @@ class WorkoutsController < ApplicationController
   def index
     @workouts = Workout.all
     respond_to do |format|
-      format.json 
+      format.json
     end
   end
 
@@ -15,7 +15,7 @@ class WorkoutsController < ApplicationController
 
     Equipment.find_each do |equipment|
       params[:equipment].each do |params_equipment|
-        if (equipment.name == params_equipment)
+        if equipment.name == params_equipment
           users_equipment.push(equipment)
         end
       end
@@ -23,7 +23,7 @@ class WorkoutsController < ApplicationController
 
     WorkoutEquipment.find_each do |workout_equipment|
       users_equipment.each do |user_equipment|
-        if (workout_equipment.equipment == user_equipment)
+        if workout_equipment.equipment == user_equipment
           user_workout_equipments.push(workout_equipment)
         end
       end
@@ -33,10 +33,10 @@ class WorkoutsController < ApplicationController
       @workouts.push(Workout.find(workout_equipment.workout.id))
     end
 
-    if (params.has_key?(:sport))
-      @workouts.select!{ |workout| workout.sport.name == params[:sport] }
+    if params.has_key?(:sport)
+      @workouts.select! { |workout| workout.sport.name == params[:sport] }
     end
-    
+
     respond_to do |format|
       format.json
     end
