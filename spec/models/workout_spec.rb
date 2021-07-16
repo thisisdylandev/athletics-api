@@ -10,7 +10,7 @@ RSpec.describe Workout, type: :model do
     expect(no_name).to_not be_valid
   end
   it "is not valid without a sport" do
-    no_sport = Workout.new(name: "Mens Beginner Rugby")
+    no_sport = Workout.new(sport: FactoryBot.build(:sport))
     expect(no_sport).to_not be_valid
   end
 end
