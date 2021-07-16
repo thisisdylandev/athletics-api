@@ -11,28 +11,34 @@ class WorkoutsController < ApplicationController
   def show
     users_equipment = []
     user_workout_equipments = []
-    workouts = []
+    @workouts = []
 
-    params[:equipment].each do |equipment|
-      users_equipment.push(Equipment.where(name: equipment))
+    Equipment.find_each do |equipment|
+      params[:equipment].each do |params_equipment|
+        if (equipment.name == params_equipment)
+          users_equipment.push(equipment)
+        end
+      end
     end
 
-    users_equipment.each do |equipment|
-      user_workout_equipments.push(WorkoutEquipment.where(equipment: equipment))
+    WorkoutEquipment.find_each do |workout_equipment|
+      users_equipment.each do |user_equipment|
+        if (workout_equipment.equipment == user_equipment)
+          user_workout_equipments.push(workout_equipment)
+        end
+      end
     end
 
     user_workout_equipments.each do |workout_equipment|
-      logger.error workout_equipment
-      # workouts.push(Workout.where(id: workout_equipment.workout_id))
+      @workouts.push(Workout.find(workout_equipment.workout.id))
+    end
+
+    if (params.has_key?(:sport))
+      @workouts.select!{ |workout| workout.sport.name == params[:sport] }
     end
     
-    render json: user_workout_equipments
-  end
-
-  private
-
-  # Only allow a list of trusted parameters through.
-  def workout_params
-    params.require(:workout).permit(:sport, :equipment)
+    respond_to do |format|
+      format.json
+    end
   end
 end
