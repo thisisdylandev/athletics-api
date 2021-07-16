@@ -1,5 +1,7 @@
+require "faker"
+
 FactoryBot.define do
   factory :sport do
-    name { "rugby" }
+    name { Faker::Games::Zelda.game }
   end
 end

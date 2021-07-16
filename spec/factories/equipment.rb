@@ -1,5 +1,7 @@
+require "faker"
+
 FactoryBot.define do
   factory :equipment do
-    name { "squat rack" }
+    name { Faker::Games::Zelda.item }
   end
 end
